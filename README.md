@@ -72,3 +72,36 @@ A real-time chat application built with React and Firebase. This app features us
 4. Send text messages and upload images within the chat.
 
 ## 🗂️ Folder Structure
+react-chat-app/
+│
+├── public/
+├── src/
+│ ├── components/ # Reusable UI components
+│ ├── contexts/ # Context providers for Firebase and user state
+│ ├── hooks/ # Custom hooks
+│ ├── pages/ # Page components (Login, Register, Chat)
+│ ├── services/ # Firebase service functions
+│ ├── utils/ # Utility functions
+│ ├── App.js # Main app component
+│ ├── index.js # Entry point
+│ └── ... # Other files
+│
+├── .env # Environment variables
+├── .gitignore # Files to ignore in git
+├── package.json # Project dependencies and scripts
+└── README.md # Project README file
+
+
+## 🤝 Contributing
+
+Contributions are welcome! Please open an issue or submit a pull request if you have any suggestions or improvements.
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgements
+
+- [Firebase](https://firebase.google.com/) for their excellent suite of tools
+- [React](https://reactjs.org/) for their powerful library
+- Everyone who contributed to this project
