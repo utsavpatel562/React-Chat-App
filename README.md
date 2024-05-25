@@ -1,1 +1,1 @@
-# AI-Image-Generation-
+# React-Chat-App
