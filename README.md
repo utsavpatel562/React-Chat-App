@@ -36,8 +36,8 @@ A real-time chat application built with React and Firebase. This app features us
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/your-username/react-chat-app.git
-    cd react-chat-app
+    git clone https://github.com/utsavpatel562/React-Chat-App.git
+    cd React-Chat-App
     ```
 
 2. Install dependencies:
