@@ -30,10 +30,33 @@ const Detail = () => {
             </div>
             <div className="photos">
               <div className="photoItem">
-                <img src="../photoItem2.jpg" />
-                <span>photo_2024_2.png</span>
+                <div className="photoDetails">
+                  <img src="../photoItem2.jpg" />
+                  <span>photo_2024_2.png</span>
+                </div>
+                <img src="../download.png" />
               </div>
-              <img src="../download.png" />
+              <div className="photoItem">
+                <div className="photoDetails">
+                  <img src="../photoItem2.jpg" />
+                  <span>photo_2024_2.png</span>
+                </div>
+                <img src="../download.png" />
+              </div>
+              <div className="photoItem">
+                <div className="photoDetails">
+                  <img src="../photoItem2.jpg" />
+                  <span>photo_2024_2.png</span>
+                </div>
+                <img src="../download.png" />
+              </div>
+              <div className="photoItem">
+                <div className="photoDetails">
+                  <img src="../photoItem2.jpg" />
+                  <span>photo_2024_2.png</span>
+                </div>
+                <img src="../download.png" />
+              </div>
             </div>
           </div>
           <div className="option">
@@ -42,6 +65,7 @@ const Detail = () => {
               <img src="../arrowUp.png" alt="" />
             </div>
           </div>
+          <button>Block User</button>
         </div>
       </div>
     </>
