@@ -84,7 +84,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 Feel free to reach out if you have any questions or suggestions!
 
-- **Email**: utsavpatel562@example.com (replace with your email)
+- **Email**: utsavpatel562@gmail.com (replace with your email)
 
 ---
 
