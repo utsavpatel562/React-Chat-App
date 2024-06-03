@@ -1,3 +1,4 @@
+// Code by Utsav Patel
 import React, { useEffect, useState } from "react";
 import "../ChatList/chatList.css";
 import AddUser from "./addUser/addUser";
@@ -9,6 +10,7 @@ import { useChatStore } from "../../../lib/chatStore";
 const ChatList = () => {
   const [chats, setChats] = useState([]);
   const [addMode, setAddMode] = useState(false);
+  const [input, setInput] = useState("");
 
   const { currentUser } = useUserStore();
   const { chatId, changeChat } = useChatStore();
@@ -36,22 +38,28 @@ const ChatList = () => {
   }, [currentUser.id]);
 
   const handleSelect = async (chat) => {
-    const userChatRef = doc(db, "userchats", currentUser.id);
-    const userChatsSnapshot = await getDoc(userChatRef);
-    if (userChatsSnapshot.exists()) {
-      const userChatData = userChatsSnapshot.data();
-      const chatIndex = userChatData.chats.findIndex(
-        (c) => c.chatId === chatId
-      );
-      userChatData.chats[chatIndex].isSeen = true;
-
-      await updateDoc(userChatRef, {
-        chats: userChatData.chats,
+    const userChats = chats.map((item) => {
+      const { user, ...rest } = item;
+      return rest;
+    });
+    const chatIndex = userChats.findIndex(
+      (item) => item.chatId === chat.chatId
+    );
+    userChats[chatIndex].isSeen = true;
+    const userChatsRef = doc(db, "userchats", currentUser.id);
+    try {
+      await updateDoc(userChatsRef, {
+        chats: userChats,
       });
+      changeChat(chat.chatId, chat.user);
+    } catch (err) {
+      console.log(err);
     }
-
-    changeChat(chat.chatId, chat.user);
   };
+
+  const filteredChats = chats.filter((c) =>
+    c.user.username.toLowerCase().includes(input.toLowerCase())
+  );
 
   return (
     <>
@@ -59,7 +67,11 @@ const ChatList = () => {
         <div className="search">
           <div className="searchBar">
             <img src="../search.png" alt="" />
-            <input type="text" placeholder="Search" />
+            <input
+              type="text"
+              placeholder="Search"
+              onChange={(e) => setInput(e.target.value)}
+            />
           </div>
           <img
             src={addMode ? "../minus.png" : "../plus.png"}
@@ -67,7 +79,7 @@ const ChatList = () => {
             onClick={() => setAddMode((prev) => !prev)}
           />
         </div>
-        {chats.map((chat) => (
+        {filteredChats.map((chat) => (
           <div
             className="item"
             key={chat.chatId}
@@ -76,9 +88,20 @@ const ChatList = () => {
               backgroundColor: chat?.isSeen ? "transparent" : "#5183fe",
             }}
           >
-            <img src={chat.user.avatar || "../avatar.png"} alt="" />
+            <img
+              src={
+                chat.user.blocked.includes(currentUser.id)
+                  ? "../avatar.png"
+                  : chat.user.avatar || "../avatar.png"
+              }
+              alt=""
+            />
             <div className="texts">
-              <span>{chat.user.username}</span>
+              <span>
+                {chat.user.blocked.includes(currentUser.id)
+                  ? "User"
+                  : chat.user.username}
+              </span>
               <p>{chat.lastMessage}</p>
             </div>
           </div>
