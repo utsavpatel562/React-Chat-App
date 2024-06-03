@@ -35,34 +35,36 @@ Follow these steps to get a local copy of the project up and running.
 
    ```sh
    git clone https://github.com/utsavpatel562/React-Chat-App.git
+   React-Chat-App
+   npm install
 
-
-<code>cd React-Chat-App
-npm install</code>
-
+<code>
 REACT_APP_API_KEY=your-api-key
 REACT_APP_AUTH_DOMAIN=your-auth-domain
 REACT_APP_PROJECT_ID=your-project-id
 REACT_APP_STORAGE_BUCKET=your-storage-bucket
 REACT_APP_MESSAGING_SENDER_ID=your-messaging-sender-id
 REACT_APP_APP_ID=your-app-id
+</code>
 
-npm start
+<br> npm start 
 
 The app should now be running on http://localhost:3000.
 
 ### Contributing
 Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are greatly appreciated.
 
-(1) Fork the Project
-(2) Create your Feature Branch (git checkout -b feature/AmazingFeature)
-(3) Commit your Changes (git commit -m 'Add some AmazingFeature')
-(4) Push to the Branch (git push origin feature/AmazingFeature)
-(5) Open a Pull Request
+<ul shape="number">
+<li>Fork the Project</li>
+<li>Create your Feature Branch (git checkout -b feature/AmazingFeature)</li>
+<li>Commit your Changes (git commit -m 'Add some AmazingFeature')</li>
+<li>Push to the Branch (git push origin feature/AmazingFeature)</li>
+<li>Open a Pull Request</li>
+</ul>
 
 ### 📧 Contact
-Utsav Patel - utsavpatel562@gmail.com
+Utsav Patel - utsavpatel562@gmail.com<br>
 Project Link: https://github.com/utsavpatel562/React-Chat-App
 
 ### 📝 License
-Distributed under the MIT License. See LICENSE for more information.
+Distributed under the MIT License. <br>See LICENSE for more information.
