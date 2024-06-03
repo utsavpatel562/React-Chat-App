@@ -16,6 +16,10 @@ const Chat = () => {
   const [chat, setChat] = useState();
   const [open, setOpen] = useState(false);
   const [text, setText] = useState("");
+  const [img, setImg] = useState({
+    file: null,
+    url: "",
+  });
 
   const { currentUser } = useUserStore();
   const { chatId, user } = useChatStore();
@@ -39,6 +43,15 @@ const Chat = () => {
     setOpen(false);
   };
 
+  const handleImg = (e) => {
+    if (e.target.files[0]) {
+      setImg({
+        file: e.target.files[0],
+        url: URL.createObjectURL(e.target.files[0]),
+      });
+    }
+  };
+
   const handleSend = async () => {
     if (text == "") return;
     try {
@@ -52,16 +65,17 @@ const Chat = () => {
 
       const userIDs = [currentUser.id, user.id];
       userIDs.forEach(async (id) => {
-        const userChatRef = doc(db, "userChats", id);
+        const userChatRef = doc(db, "userchats", id);
         const userChatsSnapshot = await getDoc(userChatRef);
         if (userChatsSnapshot.exists()) {
           const userChatData = userChatsSnapshot.data();
           const chatIndex = userChatData.chats.findIndex(
             (c) => c.chatId === chatId
           );
-          userChatData[chatIndex].lastMessage = text;
-          userChatData[chatIndex].isSeen = id === currentUser.id ? true : false;
-          userChatData[chatIndex].updatedAt = Date.now();
+          userChatData.chats[chatIndex].lastMessage = text;
+          userChatData.chats[chatIndex].isSeen =
+            id === currentUser.id ? true : false;
+          userChatData.chats[chatIndex].updatedAt = Date.now();
 
           await updateDoc(userChatRef, {
             chats: userChatData.chats,
@@ -104,6 +118,7 @@ const Chat = () => {
       <div className="bottom">
         <div className="icons">
           <img src="../img.png" alt="" />
+          <input type="file" id="file" alt="" />
           <img src="../camera.png" alt="" />
           <img src="../mic.png" alt="" />
         </div>
