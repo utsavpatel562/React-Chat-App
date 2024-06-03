@@ -36,8 +36,9 @@ Follow these steps to get a local copy of the project up and running.
    ```sh
    git clone https://github.com/utsavpatel562/React-Chat-App.git
 
-cd React-Chat-App
-npm install
+
+<code>cd React-Chat-App
+npm install</code>
 
 REACT_APP_API_KEY=your-api-key
 REACT_APP_AUTH_DOMAIN=your-auth-domain
