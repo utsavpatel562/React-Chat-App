@@ -38,6 +38,7 @@ Follow these steps to get a local copy of the project up and running.
    React-Chat-App
    npm install
 
+### Firebase Config
 <code>
 REACT_APP_API_KEY=your-api-key
 REACT_APP_AUTH_DOMAIN=your-auth-domain
@@ -47,7 +48,7 @@ REACT_APP_MESSAGING_SENDER_ID=your-messaging-sender-id
 REACT_APP_APP_ID=your-app-id
 </code>
 
-<br> npm start 
+<br>npm start 
 
 The app should now be running on http://localhost:3000.
 
