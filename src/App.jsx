@@ -1,3 +1,4 @@
+// Code by Utsav Patel
 import { useEffect } from "react";
 import "./App.css";
 import Chat from "./components/chat/Chat";
