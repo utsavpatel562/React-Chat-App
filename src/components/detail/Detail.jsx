@@ -1,3 +1,4 @@
+// Code by Utsav Patel
 import React from "react";
 import "../detail/detail.css";
 import { auth, db } from "../../lib/firebase";
