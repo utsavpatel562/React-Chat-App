@@ -21,6 +21,8 @@
 .chatList{
     flex: 1;
     overflow: scroll;
+    overflow-x: hidden;
+
     .search{
         display: flex;
         align-items: center;    
@@ -79,6 +81,7 @@
                 font-weight: 500;
             }
             p{
+                text-align: left;
                 font-size: 14px;
                 font-weight: 300;
             }
