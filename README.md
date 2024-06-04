@@ -50,8 +50,8 @@ REACT_APP_APP_ID=your-app-id
 
 ### Contributing
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.<br>
-<code>git checkout -b feature/AmazingFeature</code>
-<code>git commit -m 'Add some AmazingFeature'</code>
+<code>git checkout -b feature/AmazingFeature</code><br>
+<code>git commit -m 'Add some AmazingFeature'</code><br>
 <code>git push origin feature/AmazingFeature</code>
 
 ### 📧 Contact
