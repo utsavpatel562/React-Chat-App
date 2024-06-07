@@ -1,8 +1,3 @@
-<style>
-   img{
-      border-radius:20px;
-   }
-</style>
 # 📱 React-Chat-App
 
 Welcome to the **React-Chat-App**! This is a real-time chat application built with React, Firebase, and Firestore. The app leverages Zustand for state management and Tailwind CSS for styling. It's deployed using Firebase Hosting.
